@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather Deshboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" type="text/css">
+  </head>
+<body>
+ 
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4"><center>Weather Dashboard</center></h1>
+        </div>
+    </div>
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand"><h3>Search Weather</h3></a>
+      <form class="form-inline">
+        <input class= "inputSearch" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="clickSearch" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </nav>
+
+    <br><br>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <div class="city"></div>
+          <div class="temp"></div>
+          <div class="wind"></div>
+          <div class="humidity"></div>
+          <div class="uvIndex"></div>
+        </div>
+      </div>
+
+
+    <div class="container">
+      <div class = "row">
+
+        <div class = "col">
+            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+   
+                <div class="card-body">
+                    <div class="city1"></div>
+                    <div class="temp1"></div>
+                    <div class="wind1"></div>
+                    <div class="humidity1"></div>
+                    <div class="uvIndex1"></div>
+                </div>
+              </div>
+        </div>
+
+        <div class="col">
+            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+             
+                <div class="card-body">
+                    <div class="city2"></div>
+                    <div class="temp2"></div>
+                    <div class="wind2"></div>
+                    <div class="humidity2"></div>
+                    <div class="uvIndex2"></div>
+                </div>
+              </div>
+        </div> 
+      
+
+
+        <div class="col">
+          <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+            
+              <div class="card-body">
+                  <div class="city3"></div>
+                  <div class="temp3"></div>
+                  <div class="wind3"></div>
+                  <div class="humidity3"></div>
+                  <div class="uvIndex3"></div>
+              </div>
+            </div>
+        </div>
+
+          <div class="col">
+            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+            
+                <div class="card-body">
+                    <div class="city4"></div>
+                    <div class="temp4"></div>
+                    <div class="wind4"></div>
+                    <div class="humidity4"></div>
+                    <div class="uvIndex4"></div>
+                </div>
+              </div>
+          </div>
+
+          <div class="col">
+              <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+               
+                  <div class="card-body">
+                      <div class="city5"></div>
+                      <div class="temp5"></div>
+                      <div class="wind5"></div>
+                      <div class="humidity5"></div>
+                      <div class="uvIndex5"></div>
+                  </div>
+                </div>
+            </div>
+
+
+      </div>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <script type="text/JavaScript">
+
+    var city ="";
+    var APIKey = "15f1b505f3d0eb0bcb509adfccd72a14"; 
+    var queryURL ="https://api.openweathermap.org/data/2.5/weather?" +
+    "q=nashville,Burundi&units=imperial&appid=" + APIKey;
+    
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    })
+    
+    .then(function(response) {
+        console.log(queryURL);
+        console.log(response);
+    
+        $(".city").html("<h1>"+response.name+"</h1>");
+        $(".temp").text("Temperature(F):"+response.main.temp);
+        $(".wind").text("Wind Speed:"+response.wind.speed);
+        $(".humidity").text("Humidity:"+response.main.humidity);
+        $(".uvIndex").text("UV Index:"+response.main.uvindex);
+    
+        var tempF = (response.main.temp - 273.15) * 1.80 + 32;
+            $(".tempF").text("Temperature (Kelvin) " + tempF);
+    
+        console.log("<h1>"+response.name+"</h1>");
+        console.log("Temperature(F):"+response.main.temp);
+        console.log("Wind Speed:"+response.wind.speed);
+        console.log("Humidity:"+response.main.humidity);
+        console.log("UV Index:"+response.main.uvindex); 
+
+    });
+
+
+    var APIKey = "15f1b505f3d0eb0bcb509adfccd72a14"; 
+    var queryURL ="https://api.openweathermap.org/data/2.5/weather?" +
+    "q=chicago,Burundi&units=imperial&appid=" + APIKey;
+
+    $.ajax({
+      url:queryURL,
+      method: "GET"
+    })
+    
+    .then(function(response){
+      console.log(queryURL);
+        console.log(response);
+    
+        $(".city1").html("<h1>"+response.name+"</h1>");
+        $(".temp1").text("Temperature(F):"+response.main.temp);
+        $(".wind1").text("Wind Speed:"+response.wind.speed);
+        $(".humidity1").text("Humidity:"+response.main.humidity);
+        $(".uvIndex1").text("UV Index:"+response.main.uvindex);
+    
+        var tempF = (response.main.temp - 273.15) * 1.80 + 32;
+            $(".tempF").text("Temperature (Kelvin) " + tempF);
+    
+        console.log("<h1>"+response.name+"</h1>");
+        console.log("Temperature(F):"+response.main.temp);
+        console.log("Wind Speed:"+response.wind.speed);
+        console.log("Humidity:"+response.main.humidity);
+        console.log("UV Index:"+response.main.uvindex); 
+    
+    })
+
+    var APIKey = "15f1b505f3d0eb0bcb509adfccd72a14"; 
+    var queryURL ="https://api.openweathermap.org/data/2.5/weather?" +
+    "q=Bangkok,Burundi&units=imperial&appid=" + APIKey;
+
+    $.ajax({
+      url:queryURL,
+      method: "GET"
+    })
+    
+    .then(function(response){
+      console.log(queryURL);
+        console.log(response);
+    
+        $(".city2").html("<h1>"+response.name+"</h1>");
+        $(".temp2").text("Temperature(F):"+response.main.temp);
+        $(".wind2").text("Wind Speed:"+response.wind.speed);
+        $(".humidity2").text("Humidity:"+response.main.humidity);
+        $(".uvIndex2").text("UV Index:"+response.main.uvindex);
+    
+        var tempF = (response.main.temp - 273.15) * 1.80 + 32;
+            $(".tempF").text("Temperature (Kelvin) " + tempF);
+    
+        console.log("<h1>"+response.name+"</h1>");
+        console.log("Temperature(F):"+response.main.temp);
+        console.log("Wind Speed:"+response.wind.speed);
+        console.log("Humidity:"+response.main.humidity);
+        console.log("UV Index:"+response.main.uvindex); 
+    
+    })
+
+    var APIKey = "15f1b505f3d0eb0bcb509adfccd72a14"; 
+    var queryURL ="https://api.openweathermap.org/data/2.5/weather?" +
+    "q=London,Burundi&units=imperial&appid=" + APIKey;
+
+    $.ajax({
+      url:queryURL,
+      method: "GET"
+    })
+    
+    .then(function(response){
+      console.log(queryURL);
+        console.log(response);
+    
+        $(".city3").html("<h1>"+response.name+"</h1>");
+        $(".temp3").text("Temperature(F):"+response.main.temp);
+        $(".wind3").text("Wind Speed:"+response.wind.speed);
+        $(".humidity3").text("Humidity:"+response.main.humidity);
+        $(".uvIndex3").text("UV Index:"+response.main.uvindex);
+    
+        var tempF = (response.main.temp - 273.15) * 1.80 + 32;
+            $(".tempF").text("Temperature (Kelvin) " + tempF);
+    
+        console.log("<h1>"+response.name+"</h1>");
+        console.log("Temperature(F):"+response.main.temp);
+        console.log("Wind Speed:"+response.wind.speed);
+        console.log("Humidity:"+response.main.humidity);
+        console.log("UV Index:"+response.main.uvindex); 
+    
+    })
+
+    var APIKey = "15f1b505f3d0eb0bcb509adfccd72a14"; 
+    var queryURL ="https://api.openweathermap.org/data/2.5/weather?" +
+    "q=Munich,Burundi&units=imperial&appid=" + APIKey;
+
+    $.ajax({
+      url:queryURL,
+      method: "GET"
+    })
+    
+    .then(function(response){
+      console.log(queryURL);
+        console.log(response);
+    
+        $(".city4").html("<h1>"+response.name+"</h1>");
+        $(".temp4").text("Temperature(F):"+response.main.temp);
+        $(".wind4").text("Wind Speed:"+response.wind.speed);
+        $(".humidity4").text("Humidity:"+response.main.humidity);
+        $(".uvIndex4").text("UV Index:"+response.main.uvindex);
+    
+        var tempF = (response.main.temp - 273.15) * 1.80 + 32;
+            $(".tempF").text("Temperature (Kelvin) " + tempF);
+    
+        console.log("<h1>"+response.name+"</h1>");
+        console.log("Temperature(F):"+response.main.temp);
+        console.log("Wind Speed:"+response.wind.speed);
+        console.log("Humidity:"+response.main.humidity);
+        console.log("UV Index:"+response.main.uvindex); 
+    
+    })
+
+    var APIKey = "15f1b505f3d0eb0bcb509adfccd72a14"; 
+    var queryURL ="https://api.openweathermap.org/data/2.5/weather?" +
+    "q=New york,Burundi&units=imperial&appid=" + APIKey;
+
+    $.ajax({
+      url:queryURL,
+      method: "GET"
+    })
+    
+    .then(function(response){
+      console.log(queryURL);
+        console.log(response);
+    
+        $(".city5").html("<h1>"+response.name+"</h1>");
+        $(".temp5").text("Temperature(F):"+response.main.temp);
+        $(".wind5").text("Wind Speed:"+response.wind.speed);
+        $(".humidity5").text("Humidity:"+response.main.humidity);
+        $(".uvIndex5").text("UV Index:"+response.main.uvindex);
+    
+        var tempF = (response.main.temp - 273.15) * 1.80 + 32;
+            $(".tempF").text("Temperature (Kelvin) " + tempF);
+    
+        console.log("<h1>"+response.name+"</h1>");
+        console.log("Temperature(F):"+response.main.temp);
+        console.log("Wind Speed:"+response.wind.speed);
+        console.log("Humidity:"+response.main.humidity);
+        console.log("UV Index:"+response.main.uvindex); 
+    
+    })
+
+
+</script> -->
+<script src="/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>
